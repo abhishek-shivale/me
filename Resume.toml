@@ -1,0 +1,260 @@
+[personal]
+name = "Abhishek Shivale"
+initials = "AS"
+url = "https://abhishek.win"
+location = "India"
+location-link = "https://www.google.com/maps/place/india"
+description = "I am a backend engineer with {{YOE}} years of experience building reliable distributed systems with Node.js, TypeScript, Kafka, gRPC, PostgreSQL, and Rust"
+title = "Backend Engineer"
+bio = [
+    "I build **reliable distributed systems** with **Node.js**, **Kafka**, **gRPC**, and **Rust**.",
+    "Currently building a **multi-tenant messaging platform** at **Xoyal IT Services**.",
+    "Shipped **payment integrations** and **event pipelines** handling **2M+ events a day**.",
+]
+summary = "I love building software that scales and solves real problems. I build software in multiple languages, primarily Rust, JavaScript, and TypeScript, and try to make every system as efficient as possible. I have built multiple payment integrations for high-scale systems and event-driven systems using Kafka that process more than 2 million events per day."
+avatar-url = "/pfp-transparent.png"
+skills = [
+    "Node.js", "TypeScript", "NestJS", "Express.js", "Kafka", "gRPC", "BullMQ",
+    "Redis", "Valkey", "ScyllaDB", "ClickHouse", "PostgreSQL", "MongoDB", "Prisma",
+    "Drizzle", "Docker", "AWS", "GitHub Actions", "k6", "Linux", "Rust", "Tokio",
+    "Axum", "Dioxus", "Solana", "Anchor", "Arweave", "Python", "Flask", "Next.js",
+    "React",
+]
+
+[[navbar]]
+href = "/"
+icon = "home"
+label = "Home"
+
+[[navbar]]
+href = "/blog"
+icon = "notebook"
+label = "Blog"
+
+[contact]
+email = "abhishekshivale01@gmail.com"
+
+[[contact.social]]
+name = "GitHub"
+url = "https://github.com/abhishek-shivale"
+icon = "github"
+navbar = true
+
+[[contact.social]]
+name = "LinkedIn"
+url = "https://www.linkedin.com/in/abhishek-shivale/"
+icon = "linkedin"
+navbar = true
+
+[[contact.social]]
+name = "X"
+url = "https://x.com/abhishekwinn"
+icon = "x"
+navbar = true
+
+[[contact.social]]
+name = "Send Email"
+url = "mailto:abhishekshivale01@gmail.com"
+icon = "email"
+navbar = true
+
+[[work]]
+company = "Xoyal IT Services"
+href = "#"
+badges = ["Current"]
+location = "Pune, Maharashtra"
+title = "Node.js Developer"
+logo-url = "https://media.licdn.com/dms/image/v2/D4D0BAQEeljnxoh_UTA/company-logo_100_100/B4DZmErQYRGsAQ-/0/1758867556359/xoyal_logo?e=1764806400&v=beta&t=SCt1iNkpkNghH3fTCNMiH4EImS4lcysyxFYuhgSsJqY"
+start = "June 2025"
+end = "Present"
+description = "Building backend services for a multi-tenant messaging platform using NestJS, Kafka, gRPC, ScyllaDB, ClickHouse, and PostgreSQL. Delivered authentication, sessions, API keys, tokens, RBAC, permissions, invitations, SMS and MMS workflows, bulk and scheduled messaging, webhooks, message logs, templates, notifications, billing, wallet operations, auto-recharge, payment history, and multi-provider payment integrations. Also worked on Kafka consumer reliability, retry flows, rate limiting, load testing, deployments, data migrations, and production debugging."
+
+[[work]]
+company = "Freelance"
+href = "#"
+badges = []
+location = "Remote"
+title = "Software Developer"
+logo-url = "https://res.cloudinary.com/dygubvmg6/image/upload/h_200,w_200/v1745657872/atkjbhocsiyv2zw2rg80.jpg"
+start = "Mar 2025"
+end = "May 2025"
+description = "Built a Python trading bot that converted two swing-trading strategies into executable rules, with a historical data analysis and backtesting workflow covering six months of market data."
+
+[[work]]
+company = "EcoStart Ventures Inc."
+href = "https://www.climachampions.com"
+badges = []
+location = "Pune, Maharashtra"
+title = "Full-time Software Trainee"
+logo-url = "https://res.cloudinary.com/dmhge6flm/image/upload/v1717398740/Favicon.png"
+start = "Jan 2024"
+end = "Mar 2025"
+description = "Built REST APIs in Node.js, designed and optimized database schemas, implemented vector search, and integrated AI-assisted workflows to improve search and automate platform operations."
+
+[[education]]
+school = "Chandigarh University"
+href = "https://www.cuchd.in"
+degree = "Bachelor of Computer Applications"
+logo-url = "https://www.cuchd.in/latest-assets/images/fevicon.png"
+start = "2023"
+end = "2026"
+
+[[projects]]
+title = "PG-CDC"
+href = "https://github.com/abhishek-shivale/pg-cdc"
+dates = "2026 to Present"
+active = true
+description = "A production-grade learning project for PostgreSQL change data capture. It explores WAL and logical replication, event streaming through Redpanda, asynchronous Rust processing, ClickHouse synchronization, Docker-based infrastructure, and terminal monitoring."
+technologies = ["Rust", "PostgreSQL", "CDC", "Redpanda", "ClickHouse", "Tokio", "Ratatui", "Docker"]
+image = "https://res.cloudinary.com/dygubvmg6/image/upload/v1785201827/ChatGPT_Image_Jul_28_2026_06_53_40_AM_seeok7.png"
+video = ""
+links = [
+    { type = "Source", href = "https://github.com/abhishek-shivale/pg-cdc", icon = "github" },
+]
+
+[[projects]]
+title = "Cassie"
+href = "https://cassieoracle.xyz/"
+dates = "2026"
+active = false
+description = "A permissionless optimistic oracle on Solana. Users can post bountied questions, submit bonded answers, dispute proposals, and resolve escalated cases through a reputation-weighted council. It also supports callbacks for external programs."
+technologies = ["Rust", "Solana", "Anchor", "Next.js", "Surfpool", "CPI", "PDAs"]
+image = "https://res.cloudinary.com/dygubvmg6/image/upload/v1785203778/ChatGPT_Image_Jul_28_2026_07_26_04_AM_ftqdl7.png"
+video = "https://lofi-assets.abhishek.win/portfolio/Cassie.mp4"
+links = [
+    { type = "Website", href = "https://cassieoracle.xyz/", icon = "globe" },
+    { type = "Source", href = "https://github.com/abhishek-shivale/cassie", icon = "github" },
+]
+
+[[projects]]
+title = "Sketch"
+href = "https://github.com/abhishek-shivale/sketch"
+dates = "2026"
+active = true
+description = "A real-time collaborative drawing server built with Rust, Axum, Tokio, and WebSockets. It includes concurrent state management, event broadcasting, room coordination, and drawing history replay."
+technologies = ["Rust", "Axum", "Tokio", "WebSockets", "Serde"]
+image = "https://res.cloudinary.com/dygubvmg6/image/upload/v1785202553/ChatGPT_Image_Jul_28_2026_07_05_44_AM_pf8dei.png"
+video = ""
+links = [
+    { type = "Source", href = "https://github.com/abhishek-shivale/sketch", icon = "github" },
+]
+
+[[projects]]
+title = "Stele"
+href = "https://github.com/abhishek-shivale/stele"
+dates = "2026"
+active = false
+description = "A permissionless Solana protocol for permanently publishing wallet-attributed records of real-world events. Content hashes are anchored on Solana while complete content can be stored through Arweave."
+technologies = ["Rust", "Solana", "Anchor", "Arweave", "PDAs"]
+image = "https://res.cloudinary.com/dygubvmg6/image/upload/v1785203305/ChatGPT_Image_Jul_28_2026_07_18_15_AM_rvvjkh.png"
+video = ""
+links = [
+    { type = "Source", href = "https://github.com/abhishek-shivale/stele", icon = "github" },
+]
+
+[[projects]]
+title = "Sol Key Manager"
+href = "https://github.com/abhishek-shivale/sol-keymgr"
+dates = "2026"
+active = false
+description = "A Solana-focused key management tool designed around encrypted key storage, safer local workflows, and a cleaner developer experience for managing wallets and signing operations."
+technologies = ["Rust", "Solana", "Cryptography", "CLI", "Key Management"]
+image = "https://res.cloudinary.com/dygubvmg6/image/upload/v1785203234/ChatGPT_Image_Jul_28_2026_07_17_04_AM_qmokhe.png"
+video = ""
+links = [
+    { type = "Source", href = "https://github.com/abhishek-shivale/sol-keymgr", icon = "github" },
+]
+
+[[projects]]
+title = "TimeFlow"
+href = "https://github.com/abhishek-shivale/TimeFlow"
+dates = "2026"
+active = false
+description = "A minimalist and responsive stopwatch application built with Rust and Dioxus 0.7, with start, pause, reset, and cross-platform interface support including an iOS target."
+technologies = ["Rust", "Dioxus", "iOS", "Responsive UI"]
+image = "https://res.cloudinary.com/dygubvmg6/image/upload/v1785204620/timeflow-1536x1024_jyjk0i.png"
+video = ""
+links = [
+    { type = "Source", href = "https://github.com/abhishek-shivale/TimeFlow", icon = "github" },
+]
+
+[[projects]]
+title = "Novel Hunter"
+href = "https://github.com/abhishek-shivale/novel-hunter"
+dates = "2025"
+active = true
+description = "A Flask scraper and API that extracts novel rankings, metadata, chapter lists, and chapter content from online reading sources."
+technologies = ["Python", "Flask", "Web Scraping", "REST API"]
+image = "/novel-hunter.png"
+video = ""
+links = [
+    { type = "Source", href = "https://github.com/abhishek-shivale/novel-hunter", icon = "github" },
+]
+
+[[projects]]
+title = "Video Transcoding Pipeline"
+href = "https://github.com/abhishek-shivale/video_streaming"
+dates = "2025"
+active = true
+description = "A scalable video processing pipeline built with TurboRepo, NestJS, BullMQ, Redis, PostgreSQL, AWS S3, Docker, and FFmpeg. It supports direct uploads, queued processing, multi-bitrate HLS output, and independently scalable worker services."
+technologies = ["TurboRepo", "NestJS", "Node.js", "TypeScript", "PostgreSQL", "Prisma", "BullMQ", "Redis", "AWS S3", "FFmpeg", "Docker"]
+image = ""
+video = "https://lofi-assets.abhishek.win/portfolio/Video_Transcoding.mp4"
+links = [
+    { type = "Source", href = "https://github.com/abhishek-shivale/video_streaming", icon = "github" },
+]
+
+[[projects]]
+title = "AI-powered Twitter Bot"
+href = "https://github.com/abhishek-shivale/anime_news_ai_bot"
+dates = "2025"
+active = false
+description = "An automated TypeScript bot that reads anime news from RSS feeds, generates post content through an AI workflow, schedules publishing, and records application logs."
+technologies = ["Node.js", "TypeScript", "node-cron", "Winston", "LangChain", "Twitter API", "RSS"]
+image = "/bot.png"
+video = ""
+links = [
+    { type = "Source", href = "https://github.com/abhishek-shivale/anime_news_ai_bot", icon = "github" },
+]
+
+[[projects]]
+title = "TinyURL"
+href = "https://tinyurl-one.vercel.app"
+dates = "2024 to Present"
+active = true
+description = "A URL shortening application with custom slugs, password protection, authentication, click tracking, and a database-backed management interface."
+technologies = ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS", "shadcn/ui"]
+image = "/tiny.png"
+video = ""
+links = [
+    { type = "Website", href = "https://tinyurl-one.vercel.app", icon = "globe" },
+    { type = "Source", href = "https://github.com/abhishek-shivale/tinyurl", icon = "github" },
+]
+
+[[projects]]
+title = "Next.js Starter"
+href = "https://starter-repo.vercel.app"
+dates = "2024 to Present"
+active = true
+description = "A reusable Next.js starter template for building scalable web applications with authentication, PostgreSQL, Prisma, Tailwind CSS, and a prepared component system."
+technologies = ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS", "shadcn/ui", "NextAuth"]
+image = "/template.png"
+video = ""
+links = [
+    { type = "Website", href = "https://starter-repo.vercel.app", icon = "globe" },
+    { type = "Source", href = "https://github.com/abhishek-shivale/nextjs-starter", icon = "github" },
+]
+
+[[projects]]
+title = "Email Validator"
+href = "https://email-validator-omega.vercel.app"
+dates = "2024"
+active = false
+description = "A free email validation tool for checking and cleaning email lists, designed to improve list quality and reduce invalid addresses before campaigns are sent."
+technologies = ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "Google Sheets"]
+image = "/email.png"
+video = ""
+links = [
+    { type = "Website", href = "https://email-validator-omega.vercel.app", icon = "globe" },
+    { type = "Source", href = "https://github.com/abhishek-shivale/Email_Validator", icon = "github" },
+]
