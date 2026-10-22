@@ -3,7 +3,7 @@ name = "Abhishek Shivale"
 initials = "AS"
 url = "https://abhishek.win"
 location = "India"
-location-link = "https://www.google.com/maps/place/india"
+location_link = "https://www.google.com/maps/place/india"
 description = "I am a backend engineer with {{YOE}} years of experience building reliable distributed systems with Node.js, TypeScript, Kafka, gRPC, PostgreSQL, and Rust"
 title = "Backend Engineer"
 bio = [
@@ -12,7 +12,7 @@ bio = [
     "Shipped **payment integrations** and **event pipelines** handling **2M+ events a day**.",
 ]
 summary = "I love building software that scales and solves real problems. I build software in multiple languages, primarily Rust, JavaScript, and TypeScript, and try to make every system as efficient as possible. I have built multiple payment integrations for high-scale systems and event-driven systems using Kafka that process more than 2 million events per day."
-avatar-url = "/pfp-transparent.png"
+avatar_url = "/pfp-transparent.png"
 skills = [
     "Node.js", "TypeScript", "NestJS", "Express.js", "Kafka", "gRPC", "BullMQ",
     "Redis", "Valkey", "ScyllaDB", "ClickHouse", "PostgreSQL", "MongoDB", "Prisma",
@@ -64,7 +64,7 @@ href = "#"
 badges = ["Current"]
 location = "Pune, Maharashtra"
 title = "Node.js Developer"
-logo-url = "https://media.licdn.com/dms/image/v2/D4D0BAQEeljnxoh_UTA/company-logo_100_100/B4DZmErQYRGsAQ-/0/1758867556359/xoyal_logo?e=1764806400&v=beta&t=SCt1iNkpkNghH3fTCNMiH4EImS4lcysyxFYuhgSsJqY"
+logo_url = "https://media.licdn.com/dms/image/v2/D4D0BAQEeljnxoh_UTA/company-logo_100_100/B4DZmErQYRGsAQ-/0/1758867556359/xoyal_logo?e=1764806400&v=beta&t=SCt1iNkpkNghH3fTCNMiH4EImS4lcysyxFYuhgSsJqY"
 start = "June 2025"
 end = "Present"
 description = "Building backend services for a multi-tenant messaging platform using NestJS, Kafka, gRPC, ScyllaDB, ClickHouse, and PostgreSQL. Delivered authentication, sessions, API keys, tokens, RBAC, permissions, invitations, SMS and MMS workflows, bulk and scheduled messaging, webhooks, message logs, templates, notifications, billing, wallet operations, auto-recharge, payment history, and multi-provider payment integrations. Also worked on Kafka consumer reliability, retry flows, rate limiting, load testing, deployments, data migrations, and production debugging."
@@ -75,7 +75,7 @@ href = "#"
 badges = []
 location = "Remote"
 title = "Software Developer"
-logo-url = "https://res.cloudinary.com/dygubvmg6/image/upload/h_200,w_200/v1745657872/atkjbhocsiyv2zw2rg80.jpg"
+logo_url = "https://res.cloudinary.com/dygubvmg6/image/upload/h_200,w_200/v1745657872/atkjbhocsiyv2zw2rg80.jpg"
 start = "Mar 2025"
 end = "May 2025"
 description = "Built a Python trading bot that converted two swing-trading strategies into executable rules, with a historical data analysis and backtesting workflow covering six months of market data."
@@ -86,7 +86,7 @@ href = "https://www.climachampions.com"
 badges = []
 location = "Pune, Maharashtra"
 title = "Full-time Software Trainee"
-logo-url = "https://res.cloudinary.com/dmhge6flm/image/upload/v1717398740/Favicon.png"
+logo_url = "https://res.cloudinary.com/dmhge6flm/image/upload/v1717398740/Favicon.png"
 start = "Jan 2024"
 end = "Mar 2025"
 description = "Built REST APIs in Node.js, designed and optimized database schemas, implemented vector search, and integrated AI-assisted workflows to improve search and automate platform operations."
@@ -95,7 +95,7 @@ description = "Built REST APIs in Node.js, designed and optimized database schem
 school = "Chandigarh University"
 href = "https://www.cuchd.in"
 degree = "Bachelor of Computer Applications"
-logo-url = "https://www.cuchd.in/latest-assets/images/fevicon.png"
+logo_url = "https://www.cuchd.in/latest-assets/images/fevicon.png"
 start = "2023"
 end = "2026"
 

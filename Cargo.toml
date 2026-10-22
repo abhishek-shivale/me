@@ -5,3 +5,5 @@ edition = "2024"
 
 [dependencies]
 yew = { version = "0.23.0", features = [ "csr" ] }
+serde = { version = "1", features = ["derive"] }
+toml = "1.1.8"
