@@ -1,0 +1,54 @@
+---
+title: "Streams in Node.js"
+publishedAt: "2026-02-15"
+summary: "A practical introduction to Node.js streams, their types, backpressure, buffering, and streaming large files efficiently."
+image: "https://lofi-assets.abhishek.win/portfolio/0954b1e6-4e78-4a89-96a2-26d8b147cacc.webp"
+---
+
+Have you ever heard about streams? Like senior engineers talking about how you can pipe certain streams to achieve performance gains? In this article, I will try to explain what streams actually are in Node.js and what their use cases are.
+
+Streams are a fundamental concept not only in Node.js but in computer science in general. A stream represents a continuous flow. For example, when we talk about a continuous flow of water, we call it a water stream. In computer science, just like water, data flows through complex networks. So yes, flowing data is called a stream in computer science.
+
+### Why do we need streams?
+
+Let’s say you have a 5 GB file that you want to upload to S3 from your frontend to your backend, and then to S3.
+
+One way to do it would be to load the entire 5 GB file into memory on the backend and then push it to S3. But here lies the problem: this solution cannot scale. What if 10 people try to upload at once? You would need a huge server, and it could still fail.
+
+The solution would be to use streams. Get a stream of the file from the frontend and pipe it from the backend directly to S3.
+
+### How does this actually work?
+
+In this example, data is flowing from the frontend to the backend. In Node.js, the incoming HTTP request (`req`) is a readable stream. On the backend, we just change its direction using `pipe()` to send it to S3. So you are basically streaming the file to S3 without storing the whole thing in memory.
+
+### Streams in Node.js
+
+Node.js provides an abstract API to work with streams of data. It basically provides four types of streams:
+
+1. **Writable stream** – You can use this stream to write data. A good example would be storing an uploaded file from the frontend to the backend.
+
+2. **Readable stream** – You can use this stream to read streamed data. For example, if you have a large JSON file and you want to perform certain operations on it but cannot load it fully into memory, you use a readable stream.
+
+3. **Duplex stream** – This stream implements both writable and readable behavior, which makes it very powerful. A good example would be a TCP client-server implementation.
+
+4. **Transform stream** – This is a special type of duplex stream that takes input and produces output. For example, in a read stream we just read, but in a transform stream we can modify the data while reading and writing it.
+
+There are helper APIs that Node.js provides to help with streaming data.
+
+* **pipeline** – This is a top-level function that allows you to pipe one stream to another safely and handle errors and backpressure properly.
+
+After reading so far, you might have an idea about streams. But you might be wondering: how does it actually manage everything internally?
+
+Internally, data is handled as buffers (binary data). In Node.js, when you use read or write streams, they store data in an internal buffer. The size of this internal buffer is controlled by the `highWaterMark` value. For many streams it is 16 KB by default, but for file streams like `fs.createReadStream()` it is usually 64 KB.
+
+Let’s take the same example where we send a 5 GB file from the frontend to the backend and then to S3. Everything works using streams.
+
+First, you get a stream from the frontend. This is a readable stream because the browser does not send all the data at once. When Node.js receives data, it stores chunks in its internal buffer. It emits a `data` event when chunks are available (in flowing mode), and you can listen to that event.
+
+If the writable destination is slower and the internal buffer reaches its limit, Node.js applies backpressure and waits until the buffer is drained before continuing. In real-world scenarios, when you pipe the incoming stream directly to S3, data is continuously drained and forwarded, so memory usage stays controlled.
+
+If you use `pipeline()`, you don’t need to manage this manually — it handles backpressure and errors for you automatically.
+
+There are many interesting things about streams, and we only talked briefly about some of them. You can read more about streams in the official Node.js documentation as well.
+
+If you find anything wrong or if I made any mistakes, I’m open to suggestions. Feel free to point them out.

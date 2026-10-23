@@ -1,0 +1,111 @@
+---
+title: "Buffer in Node.js"
+publishedAt: "2025-09-04"
+summary: "Learn how Node.js Buffers handle raw binary data, including buffer creation, byte access, encoding conversion, and safe memory allocation."
+---
+
+## What is a Buffer?
+
+- Buffer is a Node.js core module that works with raw binary data.
+- We can directly deal with the buffer using the `Buffer` module.
+
+## Why Node.js needs Buffers for binary data?
+
+Everything on the internet is in binary format, so we need something to deal with binary data. Here, the buffer comes into play and saves the day.
+
+## Creating a Buffer
+
+We can create a new buffer in three ways:
+
+- **Buffer.from()**
+
+We can create a new buffer using a string, an array, or another buffer as parameters to `Buffer.from()`.
+
+```js
+// From a string
+const buf1 = Buffer.from("Hello, Buffer");
+console.log(buf1); // <Buffer 45 78 6c ..>
+console.log(buf1.toString()); // Hello, Buffer
+
+// From an array
+const buf2 = Buffer.from([72, 101, 108, 108, 111]);
+console.log(buf2.toString()); // Hello
+
+// From another buffer (copying it)
+const buf3 = Buffer.from(buf1);
+console.log(buf3.toString()); // Hello, Buffer
+```
+
+- **Buffer.alloc() and Buffer.allocUnsafe()**
+
+We use these functions to create a new buffer of a given size.
+
+```js
+// From Buffer.alloc()
+const buf4 = Buffer.alloc(10);
+console.log(buf4); // <Buffer 00 00 00 00 00 ...>
+
+// From Buffer.allocUnsafe()
+const buf5 = Buffer.allocUnsafe(10);
+console.log(buf5); // <Buffer e8 91 ... random data>
+```
+
+### When to use `alloc()` or `allocUnsafe()`?
+
+- **alloc()**
+  - Slower because it initializes memory with zeros.
+  - Safer, since no old data leaks. Node.js clears memory before assigning it.
+
+- **allocUnsafe()**
+  - Faster because it skips initialization.
+  - Unsafe, because the buffer may contain old memory values until overwritten.
+
+It depends on the situation. If you need speed and can safely overwrite the memory, use `allocUnsafe()`. Otherwise, use `alloc()`.
+
+> **Note:**
+> Don’t use `new Buffer()` — it is deprecated and unsafe.
+> Use `Buffer.from()`, `Buffer.alloc()`, or `Buffer.allocUnsafe()` instead.
+
+## Reading and Writing Data in Buffers
+
+### Accessing bytes
+
+Each element in a buffer is a byte from 0 to 255.
+
+```js
+const buf = Buffer.from("Hello");
+console.log(buf[0]); // 72 (ASCII for "H")
+console.log(buf[1]); // 101 (ASCII for "e")
+```
+
+### Converting a Buffer to a string
+
+Buffers can convert back and forth with strings using different encodings.
+
+```js
+const buf = Buffer.from("Hello, world!", "utf8");
+
+console.log(buf.toString("utf8")); // "Hello, world!"
+console.log(buf.toString("hex")); // "48656c6c6f2c20776f726c6421"
+console.log(buf.toString("base64")); // "SGVsbG8sIHdvcmxkIQ=="
+
+const buf1 = Buffer.from("Hello", "utf8");
+const buf2 = Buffer.from("48656c6c6f", "hex");
+const buf3 = Buffer.from("SGVsbG8=", "base64");
+
+console.log(buf1.toString()); // Hello
+console.log(buf2.toString()); // Hello
+console.log(buf3.toString()); // Hello
+```
+
+> **Tips:**
+> - You can perform array-like operations on a buffer, such as `slice()`, `copy()`, and `concat()`.
+> - Buffers are widely used in networking, file I/O, and data exchange across the web where raw binary data is required.
+
+## Conclusion
+
+That’s all for **Buffers in Node.js**. We learned how to create buffers, read and write data, and convert between different encodings.
+
+This is just the beginning. In upcoming articles, we’ll learn about Node.js core modules and eventually put everything together into a real-world project.
+
+Stay tuned for more advanced topics. Until then, happy coding!

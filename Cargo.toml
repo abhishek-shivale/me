@@ -9,3 +9,10 @@ serde = { version = "1", features = ["derive"] }
 toml = "1.1.8"
 web-sys = { version = "0.3", features = ["Window", "Document", "Element", "Storage", "MediaQueryList"] }
 js-sys = "0.3.106"
+yew-router = "0.20"
+
+[build-dependencies]
+gray_matter = "0.3"
+mermaid-rs-renderer = { version = "0.3", default-features = false }
+pulldown-cmark = "0.13"
+serde = { version = "1", features = ["derive"] }

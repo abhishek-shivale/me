@@ -3,24 +3,48 @@ mod pages;
 mod components;
 
 use yew::prelude::*;
+use yew_router::prelude::*;
+
+use utils::resume::Resume;
+
+#[derive(Clone, PartialEq, Routable)]
+enum Route {
+    #[at("/")]
+    Home,
+    #[at("/blog")]
+    Blog,
+    #[at("/blog/:slug")]
+    Post { slug: String },
+    #[not_found]
+    #[at("/404")]
+    NotFound,
+}
+
+fn switch(route: Route, resume: &Resume) -> Html {
+    match route {
+        Route::Home => pages::home::home(resume),
+        Route::Blog => pages::blog::blog(),
+        Route::Post { slug } => pages::blog::post(&slug),
+        Route::NotFound => html! { <p class="section-heading">{ "Page not found" }</p> },
+    }
+}
 
 #[component]
 fn App() -> Html {
-    let resume = utils::resume::Resume::parse().expect("invalid Resume.toml");
+    let resume = Resume::parse().expect("invalid Resume.toml");
+    let name = resume.personal.name.clone();
+    let source_url = resume.personal.source_url.clone();
+    let nav_items = resume.navbar.clone();
     html! {
-        <ContextProvider<components::Theme> context={components::Theme::default()}>
-            <div class="site-container">
-                <components::navbar::Navbar
-                    name={resume.personal.name.clone()}
-                    items={resume.navbar.clone()}
-                />
-                { pages::home::home(&resume) }
-                <components::footer::Footer
-                    name={resume.personal.name.clone()}
-                    source_url={resume.personal.source_url.clone()}
-                />
-            </div>
-        </ContextProvider<components::Theme>>
+        <BrowserRouter>
+            <ContextProvider<components::Theme> context={components::Theme::default()}>
+                <div class="site-container">
+                    <components::navbar::Navbar name={name.clone()} items={nav_items} />
+                    <Switch<Route> render={move |route| switch(route, &resume)} />
+                    <components::footer::Footer {name} {source_url} />
+                </div>
+            </ContextProvider<components::Theme>>
+        </BrowserRouter>
     }
 }
 
