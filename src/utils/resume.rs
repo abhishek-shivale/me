@@ -7,7 +7,7 @@ pub const FILE_PATH: &str = "Resume.toml";
 // added for browser to work
 const RESUME_TOML: &str = include_str!("../../Resume.toml");
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Resume {
     pub personal: Personal,
     pub navbar: Vec<NavItem>,
@@ -17,7 +17,7 @@ pub struct Resume {
     pub projects: Vec<Project>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all(serialize = "camelCase"))]
 pub struct Personal {
     pub name: String,
@@ -34,25 +34,25 @@ pub struct Personal {
 }
 
 impl Personal {
-    pub fn description_with_yoe(&self, yoe: u32) -> String {
+    pub fn description_with_yoe(&self, yoe: f64) -> String {
         self.description.replace("{{YOE}}", &yoe.to_string())
     }
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct NavItem {
     pub href: String,
     pub icon: Icon,
     pub label: String,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Contact {
     pub email: String,
     pub social: Social,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Social {
     #[serde(rename = "GitHub")]
     pub github: SocialLink,
@@ -63,7 +63,7 @@ pub struct Social {
     pub email: SocialLink,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct SocialLink {
     pub name: String,
     pub url: String,
@@ -71,7 +71,7 @@ pub struct SocialLink {
     pub navbar: bool,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all(serialize = "camelCase"))]
 pub struct Work {
     pub company: String,
@@ -86,7 +86,7 @@ pub struct Work {
     pub description: String,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all(serialize = "camelCase"))]
 pub struct Education {
     pub school: String,
@@ -97,7 +97,7 @@ pub struct Education {
     pub end: String,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Project {
     pub title: String,
     pub href: String,
@@ -112,7 +112,7 @@ pub struct Project {
     pub video: Option<String>,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct ProjectLink {
     #[serde(rename = "type")]
     pub kind: LinkKind,
@@ -141,11 +141,20 @@ pub enum Icon {
 
 impl Resume {
     pub fn parse() -> Result<Self, Box<dyn Error>> {
-        let mut resume: Self = toml::from_str(RESUME_TOML)
-            .map_err(|e| format!("failed to parse {FILE_PATH}: {e}"))?;
+        let mut resume: Self =
+            toml::from_str(RESUME_TOML).map_err(|e| format!("failed to parse {FILE_PATH}: {e}"))?;
 
-        resume.personal.description = resume.personal.description_with_yoe(2);
+        resume.personal.description = resume
+            .personal
+            .description_with_yoe((Self::years_since_2024() * 10.0).round() / 10.0);
 
         Ok(resume)
+    }
+
+    fn years_since_2024() -> f64 {
+        const START_MS: f64 = 1_704_067_200_000.0;
+        const MS_PER_YEAR: f64 = 365.2425 * 24.0 * 60.0 * 60.0 * 1000.0;
+
+        (js_sys::Date::now() - START_MS) / MS_PER_YEAR
     }
 }
