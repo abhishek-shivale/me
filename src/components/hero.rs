@@ -16,6 +16,7 @@ pub fn Hero(props: &HeroProps) -> Html {
         <div class="about-section">
             <p class="heading-location">
                 <a href={personal.location_link.clone()} target="_blank" rel="noopener">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                     { &personal.location }
                 </a>
             </p>
@@ -25,6 +26,7 @@ pub fn Hero(props: &HeroProps) -> Html {
                 { for [&social.github, &social.linkedin, &social.x, &social.email].into_iter().map(|link| html! {
                     <a class="about-link" href={link.url.clone()} target="_blank" rel="noopener">
                         { &link.name }
+                        <i class={link.icon.class()} aria-hidden="true"></i>
                     </a>
                 }) }
             </div>

@@ -139,6 +139,21 @@ pub enum Icon {
     Youtube,
 }
 
+impl Icon {
+    pub fn class(self) -> &'static str {
+        match self {
+            Icon::Home => "fa-solid fa-house",
+            Icon::Notebook => "fa-solid fa-book",
+            Icon::Github => "fa-brands fa-github",
+            Icon::Linkedin => "fa-brands fa-linkedin",
+            Icon::X => "fa-brands fa-x-twitter",
+            Icon::Email => "fa-solid fa-envelope",
+            Icon::Globe => "fa-solid fa-globe",
+            Icon::Youtube => "fa-brands fa-youtube",
+        }
+    }
+}
+
 impl Resume {
     pub fn parse() -> Result<Self, Box<dyn Error>> {
         let mut resume: Self =

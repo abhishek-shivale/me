@@ -478,6 +478,7 @@ dependencies = [
  "js-sys",
  "serde",
  "toml",
+ "web-sys",
  "yew",
 ]
 
