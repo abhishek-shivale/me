@@ -28,7 +28,6 @@ pub fn Navbar(props: &NavbarProps) -> Html {
     }
 }
 
-// saved choice first, then the system setting
 fn initial_light() -> bool {
     let Some(window) = web_sys::window() else { return false };
     let saved = window
@@ -36,6 +35,7 @@ fn initial_light() -> bool {
         .ok()
         .flatten()
         .and_then(|s| s.get_item(THEME_KEY).ok().flatten());
+    
     match saved.as_deref() {
         Some("light") => true,
         Some("dark") => false,
@@ -53,7 +53,7 @@ fn apply_theme(light: bool) {
     if let Some(root) = window.document().and_then(|d| d.document_element()) {
         let _ = root.set_attribute("data-theme", name);
     }
-    // storage can be blocked (private mode); the toggle still works for this visit
+    
     if let Ok(Some(storage)) = window.local_storage() {
         let _ = storage.set_item(THEME_KEY, name);
     }

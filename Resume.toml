@@ -139,57 +139,57 @@ links = [
     { type = "Source", href = "https://github.com/abhishek-shivale/sketch", icon = "github" },
 ]
 
-[[projects]]
-title = "Stele"
-href = "https://github.com/abhishek-shivale/stele"
-dates = "2026"
-active = false
-description = "A permissionless Solana protocol for permanently publishing wallet-attributed records of real-world events. Content hashes are anchored on Solana while complete content can be stored through Arweave."
-technologies = ["Rust", "Solana", "Anchor", "Arweave", "PDAs"]
-image = "https://res.cloudinary.com/dygubvmg6/image/upload/v1785203305/ChatGPT_Image_Jul_28_2026_07_18_15_AM_rvvjkh.png"
-video = ""
-links = [
-    { type = "Source", href = "https://github.com/abhishek-shivale/stele", icon = "github" },
-]
+# [[projects]]
+# title = "Stele"
+# href = "https://github.com/abhishek-shivale/stele"
+# dates = "2026"
+# active = false
+# description = "A permissionless Solana protocol for permanently publishing wallet-attributed records of real-world events. Content hashes are anchored on Solana while complete content can be stored through Arweave."
+# technologies = ["Rust", "Solana", "Anchor", "Arweave", "PDAs"]
+# image = "https://res.cloudinary.com/dygubvmg6/image/upload/v1785203305/ChatGPT_Image_Jul_28_2026_07_18_15_AM_rvvjkh.png"
+# video = ""
+# links = [
+#     { type = "Source", href = "https://github.com/abhishek-shivale/stele", icon = "github" },
+# ]
 
-[[projects]]
-title = "Sol Key Manager"
-href = "https://github.com/abhishek-shivale/sol-keymgr"
-dates = "2026"
-active = false
-description = "A Solana-focused key management tool designed around encrypted key storage, safer local workflows, and a cleaner developer experience for managing wallets and signing operations."
-technologies = ["Rust", "Solana", "Cryptography", "CLI", "Key Management"]
-image = "https://res.cloudinary.com/dygubvmg6/image/upload/v1785203234/ChatGPT_Image_Jul_28_2026_07_17_04_AM_qmokhe.png"
-video = ""
-links = [
-    { type = "Source", href = "https://github.com/abhishek-shivale/sol-keymgr", icon = "github" },
-]
+# [[projects]]
+# title = "Sol Key Manager"
+# href = "https://github.com/abhishek-shivale/sol-keymgr"
+# dates = "2026"
+# active = false
+# description = "A Solana-focused key management tool designed around encrypted key storage, safer local workflows, and a cleaner developer experience for managing wallets and signing operations."
+# technologies = ["Rust", "Solana", "Cryptography", "CLI", "Key Management"]
+# image = "https://res.cloudinary.com/dygubvmg6/image/upload/v1785203234/ChatGPT_Image_Jul_28_2026_07_17_04_AM_qmokhe.png"
+# video = ""
+# links = [
+#     { type = "Source", href = "https://github.com/abhishek-shivale/sol-keymgr", icon = "github" },
+# ]
 
-[[projects]]
-title = "TimeFlow"
-href = "https://github.com/abhishek-shivale/TimeFlow"
-dates = "2026"
-active = false
-description = "A minimalist and responsive stopwatch application built with Rust and Dioxus 0.7, with start, pause, reset, and cross-platform interface support including an iOS target."
-technologies = ["Rust", "Dioxus", "iOS", "Responsive UI"]
-image = "https://res.cloudinary.com/dygubvmg6/image/upload/v1785204620/timeflow-1536x1024_jyjk0i.png"
-video = ""
-links = [
-    { type = "Source", href = "https://github.com/abhishek-shivale/TimeFlow", icon = "github" },
-]
+# [[projects]]
+# title = "TimeFlow"
+# href = "https://github.com/abhishek-shivale/TimeFlow"
+# dates = "2026"
+# active = false
+# description = "A minimalist and responsive stopwatch application built with Rust and Dioxus 0.7, with start, pause, reset, and cross-platform interface support including an iOS target."
+# technologies = ["Rust", "Dioxus", "iOS", "Responsive UI"]
+# image = "https://res.cloudinary.com/dygubvmg6/image/upload/v1785204620/timeflow-1536x1024_jyjk0i.png"
+# video = ""
+# links = [
+#     { type = "Source", href = "https://github.com/abhishek-shivale/TimeFlow", icon = "github" },
+# ]
 
-[[projects]]
-title = "Novel Hunter"
-href = "https://github.com/abhishek-shivale/novel-hunter"
-dates = "2025"
-active = true
-description = "A Flask scraper and API that extracts novel rankings, metadata, chapter lists, and chapter content from online reading sources."
-technologies = ["Python", "Flask", "Web Scraping", "REST API"]
-image = "/novel-hunter.png"
-video = ""
-links = [
-    { type = "Source", href = "https://github.com/abhishek-shivale/novel-hunter", icon = "github" },
-]
+# [[projects]]
+# title = "Novel Hunter"
+# href = "https://github.com/abhishek-shivale/novel-hunter"
+# dates = "2025"
+# active = true
+# description = "A Flask scraper and API that extracts novel rankings, metadata, chapter lists, and chapter content from online reading sources."
+# technologies = ["Python", "Flask", "Web Scraping", "REST API"]
+# image = "/novel-hunter.png"
+# video = ""
+# links = [
+#     { type = "Source", href = "https://github.com/abhishek-shivale/novel-hunter", icon = "github" },
+# ]
 
 [[projects]]
 title = "Video Transcoding Pipeline"
@@ -204,57 +204,57 @@ links = [
     { type = "Source", href = "https://github.com/abhishek-shivale/video_streaming", icon = "github" },
 ]
 
-[[projects]]
-title = "AI-powered Twitter Bot"
-href = "https://github.com/abhishek-shivale/anime_news_ai_bot"
-dates = "2025"
-active = false
-description = "An automated TypeScript bot that reads anime news from RSS feeds, generates post content through an AI workflow, schedules publishing, and records application logs."
-technologies = ["Node.js", "TypeScript", "node-cron", "Winston", "LangChain", "Twitter API", "RSS"]
-image = "/bot.png"
-video = ""
-links = [
-    { type = "Source", href = "https://github.com/abhishek-shivale/anime_news_ai_bot", icon = "github" },
-]
+# [[projects]]
+# title = "AI-powered Twitter Bot"
+# href = "https://github.com/abhishek-shivale/anime_news_ai_bot"
+# dates = "2025"
+# active = false
+# description = "An automated TypeScript bot that reads anime news from RSS feeds, generates post content through an AI workflow, schedules publishing, and records application logs."
+# technologies = ["Node.js", "TypeScript", "node-cron", "Winston", "LangChain", "Twitter API", "RSS"]
+# image = "/bot.png"
+# video = ""
+# links = [
+#     { type = "Source", href = "https://github.com/abhishek-shivale/anime_news_ai_bot", icon = "github" },
+# ]
 
-[[projects]]
-title = "TinyURL"
-href = "https://tinyurl-one.vercel.app"
-dates = "2024 to Present"
-active = true
-description = "A URL shortening application with custom slugs, password protection, authentication, click tracking, and a database-backed management interface."
-technologies = ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS", "shadcn/ui"]
-image = "/tiny.png"
-video = ""
-links = [
-    { type = "Website", href = "https://tinyurl-one.vercel.app", icon = "globe" },
-    { type = "Source", href = "https://github.com/abhishek-shivale/tinyurl", icon = "github" },
-]
+# [[projects]]
+# title = "TinyURL"
+# href = "https://tinyurl-one.vercel.app"
+# dates = "2024 to Present"
+# active = true
+# description = "A URL shortening application with custom slugs, password protection, authentication, click tracking, and a database-backed management interface."
+# technologies = ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS", "shadcn/ui"]
+# image = "/tiny.png"
+# video = ""
+# links = [
+#     { type = "Website", href = "https://tinyurl-one.vercel.app", icon = "globe" },
+#     { type = "Source", href = "https://github.com/abhishek-shivale/tinyurl", icon = "github" },
+# ]
 
-[[projects]]
-title = "Next.js Starter"
-href = "https://starter-repo.vercel.app"
-dates = "2024 to Present"
-active = true
-description = "A reusable Next.js starter template for building scalable web applications with authentication, PostgreSQL, Prisma, Tailwind CSS, and a prepared component system."
-technologies = ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS", "shadcn/ui", "NextAuth"]
-image = "/template.png"
-video = ""
-links = [
-    { type = "Website", href = "https://starter-repo.vercel.app", icon = "globe" },
-    { type = "Source", href = "https://github.com/abhishek-shivale/nextjs-starter", icon = "github" },
-]
+# [[projects]]
+# title = "Next.js Starter"
+# href = "https://starter-repo.vercel.app"
+# dates = "2024 to Present"
+# active = true
+# description = "A reusable Next.js starter template for building scalable web applications with authentication, PostgreSQL, Prisma, Tailwind CSS, and a prepared component system."
+# technologies = ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS", "shadcn/ui", "NextAuth"]
+# image = "/template.png"
+# video = ""
+# links = [
+#     { type = "Website", href = "https://starter-repo.vercel.app", icon = "globe" },
+#     { type = "Source", href = "https://github.com/abhishek-shivale/nextjs-starter", icon = "github" },
+# ]
 
-[[projects]]
-title = "Email Validator"
-href = "https://email-validator-omega.vercel.app"
-dates = "2024"
-active = false
-description = "A free email validation tool for checking and cleaning email lists, designed to improve list quality and reduce invalid addresses before campaigns are sent."
-technologies = ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "Google Sheets"]
-image = "/email.png"
-video = ""
-links = [
-    { type = "Website", href = "https://email-validator-omega.vercel.app", icon = "globe" },
-    { type = "Source", href = "https://github.com/abhishek-shivale/Email_Validator", icon = "github" },
-]
+# [[projects]]
+# title = "Email Validator"
+# href = "https://email-validator-omega.vercel.app"
+# dates = "2024"
+# active = false
+# description = "A free email validation tool for checking and cleaning email lists, designed to improve list quality and reduce invalid addresses before campaigns are sent."
+# technologies = ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "Google Sheets"]
+# image = "/email.png"
+# video = ""
+# links = [
+#     { type = "Website", href = "https://email-validator-omega.vercel.app", icon = "globe" },
+#     { type = "Source", href = "https://github.com/abhishek-shivale/Email_Validator", icon = "github" },
+# ]

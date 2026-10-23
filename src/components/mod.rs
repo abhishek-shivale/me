@@ -2,6 +2,7 @@ use yew::Properties;
 
 pub mod hero;
 pub mod navbar;
+pub mod project;
 pub mod button;
 
 
@@ -14,8 +15,8 @@ pub struct Theme {
 impl Default for Theme {
     fn default() -> Self {
         Self {
-            foreground: "var(--text-primary)".into(),
-            background: "var(--surface)".into(),
+            foreground: "var(--text-muted)".into(),
+            background: "var(--surface-raised)".into(),
         }
     }
 }

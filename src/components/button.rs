@@ -23,6 +23,8 @@ pub fn Button(props: &ButtonProps) -> Html {
         Some(href) => html! {
             <a href={href.clone()} class={props.class.clone()} {style}>
                 { &props.name }
+                { " " }
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
             </a>
         },
         None => html! {
