@@ -1,8 +1,11 @@
 use serde::{Deserialize, Serialize};
-use std::{error::Error, fs};
+use std::error::Error;
 
 // file path to resume.toml
 pub const FILE_PATH: &str = "Resume.toml";
+
+// added for browser to work
+const RESUME_TOML: &str = include_str!("../../Resume.toml");
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Resume {
@@ -32,7 +35,7 @@ pub struct Personal {
 
 impl Personal {
     pub fn description_with_yoe(&self, yoe: u32) -> String {
-        self.description.replace("{yoe}", &yoe.to_string())
+        self.description.replace("{{YOE}}", &yoe.to_string())
     }
 }
 
@@ -138,10 +141,7 @@ pub enum Icon {
 
 impl Resume {
     pub fn parse() -> Result<Self, Box<dyn Error>> {
-        let text = fs::read_to_string(FILE_PATH)
-            .map_err(|e| format!("failed to read {FILE_PATH}: {e}"))?;
-
-        let mut resume: Self = toml::from_str(&text)
+        let mut resume: Self = toml::from_str(RESUME_TOML)
             .map_err(|e| format!("failed to parse {FILE_PATH}: {e}"))?;
 
         resume.personal.description = resume.personal.description_with_yoe(2);
