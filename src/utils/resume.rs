@@ -23,6 +23,7 @@ pub struct Personal {
     pub name: String,
     pub initials: String,
     pub url: String,
+    pub source_url: String,
     pub location: String,
     pub location_link: String,
     pub description: String,

@@ -15,6 +15,10 @@ fn App() -> Html {
                     items={resume.navbar.clone()}
                 />
                 { pages::home::home(&resume) }
+                <components::footer::Footer
+                    name={resume.personal.name.clone()}
+                    source_url={resume.personal.source_url.clone()}
+                />
             </div>
         </ContextProvider<components::Theme>>
     }

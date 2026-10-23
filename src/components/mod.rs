@@ -3,6 +3,10 @@ use yew::Properties;
 pub mod hero;
 pub mod navbar;
 pub mod project;
+pub mod experience;
+pub mod skills;
+pub mod contact;
+pub mod footer;
 pub mod button;
 
 
