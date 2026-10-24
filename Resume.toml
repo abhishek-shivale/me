@@ -12,7 +12,7 @@ bio = [
     "Currently building a **multi-tenant messaging platform** at **Xoyal IT Services**.",
     "Shipped **payment integrations** and **event pipelines** handling **2M+ events a day**.",
 ]
-summary = "I love building software that scales and solves real problems. I build software in multiple languages, primarily Rust, JavaScript, and TypeScript, and try to make every system as efficient as possible. I have built multiple payment integrations for high-scale systems and event-driven systems using Kafka that process more than 2 million events per day."
+summary = "I love building software that scales and solves real problems. I build software in multiple languages, primarily Rust, JavaScript, and TypeScript, and try to make every system as efficient as possible. I have built multiple payment integrations for high-scale systems and event-driven systems using Kafka that process more than 2+ million events per day."
 avatar_url = "/pfp-transparent.png"
 skills = [
     "Node.js", "TypeScript", "NestJS", "Express.js", "Kafka", "gRPC", "BullMQ",

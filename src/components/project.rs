@@ -29,6 +29,11 @@ fn project_card(project: &Project) -> Html {
     let video = project.video.as_deref().filter(|v| !v.is_empty());
     let image = project.image.as_deref().filter(|i| !i.is_empty());
     let media = match (video, image) {
+        #[cfg(not(target_arch = "wasm32"))]
+        (Some(src), _) => html! {
+            <video class="project-img" src={src.to_owned()} autoplay=true loop=true playsinline=true muted=true></video>
+        },
+        #[cfg(target_arch = "wasm32")]
         (Some(src), _) => html! {
             <video
                 class="project-img"

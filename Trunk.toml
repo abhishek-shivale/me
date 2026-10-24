@@ -5,3 +5,8 @@ port = 8000
 [build]
 target = "web/index.html"
 dist = "dist"
+
+[[hooks]]
+stage = "post_build"
+command = "cargo"
+command_arguments = ["run", "--quiet", "--features", "ssr", "--bin", "prerender"]

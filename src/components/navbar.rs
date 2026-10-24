@@ -29,6 +29,9 @@ pub fn Navbar(props: &NavbarProps) -> Html {
 }
 
 fn initial_light() -> bool {
+    if cfg!(not(target_arch = "wasm32")) {
+        return false;
+    }
     let Some(window) = web_sys::window() else { return false };
     let saved = window
         .local_storage()

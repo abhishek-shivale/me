@@ -171,6 +171,13 @@ impl Resume {
         const START_MS: f64 = 1_704_067_200_000.0;
         const MS_PER_YEAR: f64 = 365.2425 * 24.0 * 60.0 * 60.0 * 1000.0;
 
-        (js_sys::Date::now() - START_MS) / MS_PER_YEAR
+        #[cfg(target_arch = "wasm32")]
+        let now = js_sys::Date::now();
+        #[cfg(not(target_arch = "wasm32"))]
+        let now = std::time::SystemTime::now()
+            .duration_since(std::time::UNIX_EPOCH)
+            .map_or(START_MS, |d| d.as_millis() as f64);
+
+        (now - START_MS) / MS_PER_YEAR
     }
 }
