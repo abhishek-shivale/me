@@ -49,6 +49,25 @@ fn main() {
         });
     }
 
+    let handle = resume.contact.social.x.url.trim_end_matches('/').rsplit('/').next().unwrap_or_default();
+    let shared_head = format!(
+        "<meta property=\"og:site_name\" content=\"{name}\" />\n\
+         <meta property=\"og:locale\" content=\"en_US\" />\n\
+         <meta property=\"og:image\" content=\"{site}/og-image.png\" />\n\
+         <meta property=\"og:image:width\" content=\"1200\" />\n\
+         <meta property=\"og:image:height\" content=\"630\" />\n\
+         <meta property=\"og:image:alt\" content=\"{name}, {title}\" />\n\
+         <meta name=\"twitter:image\" content=\"{site}/og-image.png\" />\n\
+         <meta name=\"twitter:site\" content=\"@{handle}\" />\n\
+         <meta name=\"twitter:creator\" content=\"@{handle}\" />\n",
+        name = escape(name),
+        title = escape(&resume.personal.title),
+        handle = escape(handle),
+    );
+    for page in &mut pages {
+        page.extra_head.push_str(&shared_head);
+    }
+
     let runtime = tokio::runtime::Builder::new_current_thread()
         .enable_all()
         .build()
@@ -97,7 +116,7 @@ fn fill_template(template: &str, page: &Page, site: &str, body: &str) -> String 
          <meta property=\"og:title\" content=\"{title}\" />\n\
          <meta property=\"og:description\" content=\"{description}\" />\n\
          <meta property=\"og:url\" content=\"{url}\" />\n\
-         <meta name=\"twitter:card\" content=\"summary\" />\n\
+         <meta name=\"twitter:card\" content=\"summary_large_image\" />\n\
          <meta name=\"twitter:title\" content=\"{title}\" />\n\
          <meta name=\"twitter:description\" content=\"{description}\" />\n\
          {extra}</head>",

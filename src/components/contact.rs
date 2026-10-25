@@ -25,6 +25,7 @@ pub fn ContactSection(props: &ContactProps) -> Html {
                 { for [&social.github, &social.linkedin, &social.x].into_iter().map(|link| html! {
                     <a class="contact-link" href={link.url.clone()} target="_blank" rel="noopener" aria-label={link.name.clone()}>
                         <i class={link.icon.class()} aria-hidden="true"></i>
+                        { format!("@{}", link.url.trim_end_matches('/').rsplit('/').next().unwrap_or_default()) }
                     </a>
                 }) }
             </div>
