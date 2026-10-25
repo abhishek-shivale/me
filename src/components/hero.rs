@@ -24,8 +24,7 @@ pub fn Hero(props: &HeroProps) -> Html {
             <p class="about-paragraph">{ &personal.summary }</p>
             <div class="about-links">
                 { for [&social.github, &social.linkedin, &social.x, &social.email].into_iter().map(|link| html! {
-                    <a class="about-link" href={link.url.clone()} target="_blank" rel="noopener">
-                        { &link.name }
+                    <a class="about-link" href={link.url.clone()} target="_blank" rel="noopener" aria-label={link.name.clone()}>
                         <i class={link.icon.class()} aria-hidden="true"></i>
                     </a>
                 }) }
