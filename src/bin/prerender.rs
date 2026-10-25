@@ -10,6 +10,7 @@ struct Page {
     description: String,
     kind: &'static str,
     extra_head: String,
+    lastmod: Option<&'static str>,
 }
 
 fn main() {
@@ -27,6 +28,7 @@ fn main() {
             description: resume.personal.description.clone(),
             kind: "website",
             extra_head: person_json_ld(&resume),
+            lastmod: None,
         },
         Page {
             path: "/blog".into(),
@@ -34,6 +36,7 @@ fn main() {
             description: format!("Articles by {name} about backend systems, Node.js, databases, distributed systems, and Rust."),
             kind: "website",
             extra_head: String::new(),
+            lastmod: POSTS.first().map(|p| p.published_at),
         },
     ];
     for post in POSTS {
@@ -46,6 +49,7 @@ fn main() {
                 "<meta property=\"article:published_time\" content=\"{}\" />\n",
                 escape(post.published_at)
             ),
+            lastmod: Some(post.published_at),
         });
     }
 
@@ -91,7 +95,10 @@ fn main() {
 
     let urls: String = pages
         .iter()
-        .map(|p| format!("  <url><loc>{site}{}</loc></url>\n", p.path))
+        .map(|p| match p.lastmod {
+            Some(date) => format!("  <url><loc>{site}{}</loc><lastmod>{date}</lastmod></url>\n", p.path),
+            None => format!("  <url><loc>{site}{}</loc></url>\n", p.path),
+        })
         .collect();
     fs::write(
         out_dir.join("sitemap.xml"),
@@ -164,6 +171,7 @@ mod tests {
             description: "d".into(),
             kind: "article",
             extra_head: String::new(),
+            lastmod: None,
         };
         let out = fill_template("<head><title>old</title></head><body></body>", &page, "https://s.io", "<p>hi</p>");
         assert!(out.contains("<title>A &amp; &quot;B&quot;</title>"));
